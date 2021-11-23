@@ -23,6 +23,7 @@ kind: Service
 metadata:
     name: app-wil
 spec:
+    type: "LoadBalancer"
     ports:
     - name: http
       port: 8888
