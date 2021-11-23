@@ -29,22 +29,3 @@ spec:
       targetPort: 8888
     selector:
         app: app-wil
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: app-wil-ingress
-  namespace: argocd
-  annotations:
-    kubernetes.io/ingress.class: nginx
-spec:
-  rules:
-  - http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-                name: app-wil
-                port:
-                    number: 8888
